@@ -1,4 +1,16 @@
 /**
+ * Get base sizing/variable settings
+ * WIP; Not currently used
+ */
+@function base($component, $value: include) {
+  @if $component == breakpoints and $value != include {
+    @return map-get(map-get(map-get($globalConfig, base), $component), $value);
+  } @else {
+    @return map-get(map-get($globalConfig, base), $component);
+  }
+
+}
+/**
  * Get opt-in usage settings
  */
 @function use($component, $value: include) {
