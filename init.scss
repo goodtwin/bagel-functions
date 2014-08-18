@@ -1,7 +1,7 @@
 @import "config";
 
 @if variable-exists(globalConfig) {
-  $globalConfig: map_merge($defaultConfig, $globalConfig);
+  $globalConfig: map_merge($defaultConfig, $globalConfig)!global;
 } @else {
   $globalConfig: $defaultConfig!global;
 }
