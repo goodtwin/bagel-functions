@@ -22,6 +22,8 @@ base:
   round: 3px
 
 	# Spacing
+  #spacing-unit: defaults to line-height; define if other is desired
+  #line-height-ratio: defaults to line-height/font-size; define if other is desired
   grid-gutter: 20px
   page-gutter: 2000px
 

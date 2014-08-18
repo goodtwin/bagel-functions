@@ -22,11 +22,21 @@
  * Double-stranded heading hierarchy.
  */
 @mixin initialize-font-size(){
-  $base-spacing-unit: base(line-height);
-  $line-height-ratio: base(line-height) / base(font-size);
+  @if map-has-key($globalConfig, spacing-unit){
+    $base-spacing-unit: map-get($globalConfig, spacing-unit) !global;
+  } @else {
+    $base-spacing-unit: base(line-height) !global;
+  }
+  @if map-has-key($globalConfig, line-height-ratio){
+    $line-height-ratio: map-get($globalConfig, line-height-ratio) !global;
+  }@else {
+    $line-height-ratio: base(line-height) / base(font-size) !global;
+  }
 
   html, body {
     font-size: base(font-size);
+    line-height: base(spacing-unit);
+    width: base(line-height-ratio);
   }
 
   h1,.alpha{
