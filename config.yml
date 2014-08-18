@@ -22,8 +22,6 @@ base:
   round: 3px
 
 	# Spacing
-  spacing-unit: base(line-height)
-  line-height-ratio: base(line-height) / base(font-size)
   grid-gutter: 20px
   page-gutter: 2000px
 

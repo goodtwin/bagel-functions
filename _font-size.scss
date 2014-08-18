@@ -22,6 +22,9 @@
  * Double-stranded heading hierarchy.
  */
 @mixin initialize-font-size(){
+  $base-spacing-unit: base(line-height);
+  $line-height-ratio: base(line-height) / base(font-size);
+
   html, body {
     font-size: base(font-size);
   }
