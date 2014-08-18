@@ -52,6 +52,6 @@ require('load-grunt-tasks')(grunt);
 
 grunt.registerTask('default', ['build']);
 grunt.registerTask('distcss', ['sass:dist', 'myth:dist']);
-grunt.registerTask('build', ['distcss']);
+grunt.registerTask('build', ['shared_config', 'distcss']);
 
 };

@@ -1,4 +1,10 @@
-@import "default";
+@import "config";
+
+@if variable-exists(globalConfig) {
+  $globalConfig: map_merge($defaultConfig, $globalConfig);
+} @else {
+  $globalConfig: $defaultConfig!global;
+}
 
 //Generate no CSS
 @import "map";

@@ -1,0 +1,39 @@
+base:
+	# Typography
+  font-size: 16px
+  line-height:  24px
+
+	# Font-sizes (in pixels)
+  giga-size:         64px
+  mega-size:         48px
+  kilo-size:         36px
+
+  h1-size:           32px
+  h2-size:           28px
+  h3-size:           24px
+  h4-size:           18px
+  h5-size:           16px
+  h6-size:           14px
+
+  milli-size:        12px
+  micro-size:        10px
+
+  # Border Radius
+  round: 3px
+
+	# Spacing
+  spacing-unit: base(line-height)
+  line-height-ratio: base(line-height) / base(font-size)
+  grid-gutter: 20px
+  page-gutter: 2000px
+
+	# Breakpoints
+	## Variables for defining stock media queries
+  lap-start:         600px
+  desk-start:        900px
+  desk-wide-start:   1200px
+
+	## Map for defining custom media queries
+  ### Author-defined only and no variables allowed:
+  #breakpoints:
+    #mama-bear: 'screen and (min-width: 800px)'

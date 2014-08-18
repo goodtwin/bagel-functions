@@ -16,6 +16,28 @@
  * limitations under the License.
  */
 
+ $palm-end:          base(lap-start) - 1px;
+ $lap-start:         base(lap-start);
+ $lap-end:           base(desk-start) - 1px;
+ $desk-start:        base(desk-start);
+ $desk-end:          base(desk-wide-start) - 1px;
+ $desk-wide-start:   base(desk-wide-start);
+
+ $breakpoints: (
+    'palm':            'screen and (max-width: #{$palm-end})',
+    'lap':             'screen and (min-width: #{$lap-start}) and (max-width: #{$lap-end})',
+    'lap-and-up':      'screen and (min-width: #{$lap-start})',
+    'portable':        'screen and (max-width: #{$lap-end})',
+    'desk':            'screen and (min-width: #{$desk-start})',
+    'desk-wide':       'screen and (min-width: #{$desk-wide-start})',
+    'under-desk-wide': 'screen and (max-width: #{$desk-end})'
+) !global;
+
+@if type-of(base(breakpoints)) == map {
+  $customBreakpoints: base(breakpoints);
+  $breakpoints: map_merge($customBreakpoints, $breakpoints)!global;
+}
+
 /**
  * A simple mixin to quickly generate whole media queries.
  */
