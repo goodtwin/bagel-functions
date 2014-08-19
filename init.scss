@@ -6,14 +6,11 @@
   $globalConfig: $defaultConfig!global;
 }
 
-//Generate no CSS
+@import "import-once";
 @import "map";
 @import "math";
 @import "media-query";
 @import "truncate";
 @import "ideal-grid";
 @import "tint-shade";
-
-//Generate (One Time Initializable) CSS
-@import "normalize";
 @import "font-size";
