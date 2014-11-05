@@ -20,6 +20,7 @@
     "grunt-contrib-sass": "^0.7.3",
     "grunt-myth": "~0.1.1",
     "load-grunt-tasks": "~0.4.0",
-    "grunt-shared-config": "~0.3.7"
+    "grunt-shared-config": "~0.3.7",
+    "grunt-dss": "^1.0.8"
   }
 }

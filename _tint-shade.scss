@@ -1,9 +1,30 @@
-/* Add percentage of white to a color */
+/**
+  * @name tint($color, $percent)
+  * @description  Add percentage of white to a color
+  * @type function
+  * @section functions
+  *
+  * @param $color (String) - Color variable, color hex, or rgba
+  * @param $percent (integer) - Percentage to lighten
+  *
+  * @example tint(#dedede, 25%);
+  *
+  */
 @function tint($color, $percent){
   @return mix(white, $color, $percent);
 }
-
-/* Add percentage of black to a color */
+/**
+  * @name shade($color, $percent)
+  * @description Add percentage of black to a color
+  * @type function
+  * @section functions
+  *
+  * @param $color (String) - Color variable, color hex, or rgba
+  * @param $percent (integer) - Percentage to darken
+  *
+  * @example shade(#dedede, 25%);
+  *
+  */
 @function shade($color, $percent){
   @return mix(black, $color, $percent);
 }

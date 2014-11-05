@@ -1,6 +1,4 @@
-/**
- * Get base sizing/variable settings
- */
+// Get base sizing/variable settings
 @function base($component, $value: include) {
   @if $component == breakpoints and $value != include {
     @return map-get(map-get(map-get($globalConfig, base), $component), $value);
@@ -15,48 +13,48 @@
     @return map-get(map-get($globalConfig, base), $component);
   }
 }
-/**
- * Get opt-in usage settings
- */
+
+// Get component usage settings
 @function use($component, $value: include) {
-    @return map-get(map-get($globalConfig, $component), $value);
+  @return map-get(map-get($globalConfig, $component), $value);
 }
-/**
- * Get opt-in theme settings
- */
+// Get theme settings
 @function use-theme($component, $theme: prototype) {
 	@return map-get(map-get(map-get($globalConfig, $component), theme), $theme);
 }
-/**
- * Get opt-in responsive settings
- */
+// Get responsive settings
 @function use-mq($alias, $value: include) {
 	@return map-get(map-get(map-get($globalConfig, mediaquery), $alias), $value);
 }
-/**
- * Get opt-in layout settings
- */
+// Get layout settings
 @function use-layout($type, $value: include) {
 	@return map-get(map-get(map-get($globalConfig, layout), $type), $value);
 }
-/**
- * Get opt-in abstraction settings
- */
+// Get abstraction settings
 @function use-abstraction($component, $value: include) {
   @return map-get(map-get(map-get($globalConfig, abstractions), $component), $value);
 }
 /**
- * Get and optionally modify colors from color palettes.
- * Inspired by http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- */
+  * @name palette($palette, $color, $tone)
+  * @type function
+  * @description Get and optionally modify colors from color palettes. Inspired by http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+  * @section functions
+  *
+  * @param $palette (String) - Source map to get
+  * @param $color (String) - Source map key - Default: base
+  * @param $tone (Integer) - Percentage of color. >100 darkens (uses shade()) , <100 lightens (usestint()) - Defaut: 100
+  *
+  * @example  palette(goodtwin, blue, 105);
+  *
+  *
+  */
 @function palette($palette, $color: base, $tone: 100) {
-    @if ($tone > 100) {
-        $tone: $tone - 100;
-        @return shade(map-get(map-get($palettes, $palette), $color), $tone);
-    }
-    @else {
-        $tone: 100 - $tone;
-        @return tint(map-get(map-get($palettes, $palette), $color), $tone);
-    }
-
+  @if ($tone > 100) {
+    $tone: $tone - 100;
+    @return shade(map-get(map-get($palettes, $palette), $color), $tone);
+  }
+  @else {
+    $tone: 100 - $tone;
+    @return tint(map-get(map-get($palettes, $palette), $color), $tone);
+  }
 }

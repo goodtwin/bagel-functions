@@ -17,19 +17,30 @@
  */
 
 /**
- * Maths helpers.
- * Halve and double numbers, returning rounded integers. E.g.:
- */
+  * @name Math Helpers
+  * @description Quarter, halve, double, triple, quadruple numbers, returning rounded integers. Derived from inuitcss [https://github.com/inuitcss]
+  * @type function
+  * @section functions
+  *
+  * @param $number (String) - Number to operate on
+  *
+  * @example quarter(20);
+  * @example halve(20);
+  * @example double(20);
+  * @example triple(20);
+  * @example quadruple(20);
+  *
+  */
 @function quarter($number) {
-    @return round($number / 4);
+  @return round($number / 4);
 }
 
 @function halve($number) {
-    @return round($number / 2);
+  @return round($number / 2);
 }
 
 @function double($number) {
-    @return round($number * 2);
+  @return round($number * 2);
 }
 
 @function triple($number) {
@@ -37,5 +48,5 @@
 }
 
 @function quadruple($number) {
-    @return round($number * 4);
+  @return round($number * 4);
 }

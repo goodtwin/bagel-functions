@@ -45,6 +45,38 @@ module.exports = function (grunt) {
         files: ['**/*.scss'],
         tasks: ['distcss']
       }
+    },
+    dss: {
+      docs: {
+        files: {
+          'docs/': './*.css'
+        },
+        options: {
+          template: 'docs/',
+          template_index: 'index.hbs',
+          parsers: {
+            // Finds @param in comment blocks
+            param: function(i, line, block, file){
+              var param = line.split(' - ');
+              return {
+                name: param[0],
+                description: param[1],
+                default: param[2]
+              };
+            },
+            // Finds @type in comment blocks
+            type: function(i, line, block, file){
+              return line;
+            },
+            // Finds @example in comment blocks
+            example: function(i, line, block, file){
+              return {
+                example: line
+              };
+            }
+          }
+        }
+      }
     }
   });
 
