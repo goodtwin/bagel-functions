@@ -2,7 +2,7 @@
   * @name tint($color, $percent)
   * @description  Add percentage of white to a color
   * @type function
-  * @section functions
+  * @section functions.tint
   *
   * @param $color (String) - Color variable, color hex, or rgba
   * @param $percent (integer) - Percentage to lighten
@@ -17,7 +17,7 @@
   * @name shade($color, $percent)
   * @description Add percentage of black to a color
   * @type function
-  * @section functions
+  * @section functions.shade
   *
   * @param $color (String) - Color variable, color hex, or rgba
   * @param $percent (integer) - Percentage to darken

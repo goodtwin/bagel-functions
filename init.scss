@@ -5,7 +5,12 @@
 } @else {
   $globalConfig: $defaultConfig!global;
 }
-
+/**
+  * @name Functions
+  * @description Mixins and functions
+  * @section functions
+  *
+  */
 @import "import-once";
 @import "map";
 @import "math";

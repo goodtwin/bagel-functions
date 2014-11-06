@@ -1,6 +1,6 @@
 {
   "name": "bagel-functions",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "Bagel UI",
   "description": "Delicious UI Framework",
   "homepage": "http://goodtwin.co",
@@ -21,6 +21,6 @@
     "grunt-myth": "~0.1.1",
     "load-grunt-tasks": "~0.4.0",
     "grunt-shared-config": "~0.3.7",
-    "grunt-dss": "^1.0.8"
+    "grunt-dss": "git://github.com/goodtwin/grunt-dss.git#fb4d5b8dfc3ea389e1934125d3319a165c4453b7"
   }
 }
