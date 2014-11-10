@@ -30,10 +30,6 @@
 @function use-layout($type, $value: include) {
 	@return map-get(map-get(map-get($globalConfig, layout), $type), $value);
 }
-// Get abstraction settings
-@function use-abstraction($component, $value: include) {
-  @return map-get(map-get(map-get($globalConfig, abstractions), $component), $value);
-}
 /**
   * @name palette($palette, $color, $tone)
   * @type function

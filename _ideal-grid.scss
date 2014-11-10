@@ -1,0 +1,39 @@
+/**
+	* @name ideal-grid($idealWidth, $minWidth, $maxWidth, $minColumns, $maxColumns, $gutterWidth)
+	* @description Define the size limits to which an element (grid items are the obvious, but not exclusive use case) can grow and shrink in a responsive environment.
+	* @section functions.ideal-grid
+	* @type mixin
+	*
+	* @param $idealWidth (Integer) - Desired grid item width
+	* @param $minWidth (Integer) - Minimum grid item width
+	* @param $maxWidth (Integer) - Maximum grid item width
+	* @param $minColumns (Integer) - Minimum number grid item columns
+	* @param $maxColumns (Integer) - Maximum number grid item columns
+	* @param $gutterWidth (Integer) - Padding between grid items - Defualt: base(grid-gutter)
+	*
+	* @example ideal-grid(250, 150, 400, 2, 6, 20);
+	*
+	*/
+@mixin ideal-grid($idealWidth, $minWidth, $maxWidth, $minColumns:1, $maxColumns:8, $gutterWidth:base(grid-gutter)){
+
+	@media screen and (max-width: ($minColumns + 1) * ($minWidth + $gutterWidth)){
+		width: percentage(1/$minColumns);
+		@if $minColumns == 1 {
+			max-width: $maxWidth;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+	@media screen and (min-width: ($minColumns + 1) * ($minWidth + $gutterWidth)){
+		width: percentage(1/($minColumns + 1));
+	}
+	//Debatable use of $idealWidth to set the next one.
+	//$minWidth may be better, depending how comfortable you are with its minimum-ness
+	//It also might depend on if you exceed $maxWidth prior to the next breakpoint.
+	@for $i from ($minColumns + 2) to ($maxColumns + 1) {
+		@media screen and (min-width: $i * ($idealWidth + $gutterWidth)){
+			width: percentage(1/$i);
+		}
+	}
+}
